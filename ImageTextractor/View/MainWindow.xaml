@@ -1,0 +1,15 @@
+﻿<Window x:Class="ImageTextractor.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ImageTextractor"
+        mc:Ignorable="d"
+        Title="ImageTextractor" Height="450" Width="800">
+    <Grid>
+        <Image Name="ChosenImage" VerticalAlignment="Top" HorizontalAlignment="Center"
+               Width="250" Height="250" Margin="0,50,225,0"/>
+        <Button Content="Bild öffnen..." HorizontalAlignment="Center" VerticalAlignment="Bottom"
+                Margin="75" Name="OpenImage" Click="OpenImage_Click"/>
+    </Grid>
+</Window>
