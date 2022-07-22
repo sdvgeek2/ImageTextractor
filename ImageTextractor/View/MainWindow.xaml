@@ -7,8 +7,9 @@
         mc:Ignorable="d"
         Title="ImageTextractor" Height="450" Width="800">
     <Grid>
-        <Image Name="ChosenImage" VerticalAlignment="Top" HorizontalAlignment="Center"
-               Width="250" Height="250" Margin="0,50,225,0"/>
+        <Image Name="ChosenImage" VerticalAlignment="Center" HorizontalAlignment="Center"
+               Width="500" Height="350" MouseEnter="ChosenImage_MouseEnter"
+               MouseLeave="ChosenImage_MouseLeave"/>
         <Button Content="Bild öffnen..." HorizontalAlignment="Center" VerticalAlignment="Bottom"
                 Margin="75" Name="OpenImage" Click="OpenImage_Click"/>
     </Grid>
