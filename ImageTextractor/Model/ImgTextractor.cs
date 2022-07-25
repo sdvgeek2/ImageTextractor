@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Drawing;
 using System.Windows;
+using IronOcr;
 
 namespace ImageTextractor.Model
 {
@@ -19,10 +20,10 @@ namespace ImageTextractor.Model
             Image = new Bitmap(Path);
         }
 
-        public void CopyText()
+        public void CopyText(OcrResult ocr)
         {
-            DataObject dataObj = new DataObject();
-            dataObj.SetData(DataFormats.Text, "Text Copy Image To Clipboard");
+            DataObject dataObj = new DataObject(ocr);
+            dataObj.SetData(DataFormats.Text, ocr.Text);
             Clipboard.SetDataObject(dataObj, true);
         }
     }

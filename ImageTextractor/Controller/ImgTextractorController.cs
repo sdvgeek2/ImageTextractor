@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Shapes;
 using ImageTextractor.Model;
+using IronOcr;
 
 namespace ImageTextractor.Controller
 {
@@ -18,8 +20,13 @@ namespace ImageTextractor.Controller
 
         public void GetText()
         {
-            // todo: select text
-            Image.CopyText();
+          var ocr = new IronTesseract();
+
+          using (var file = new OcrInput(Image.Path))
+          {
+            var res = ocr.Read(file);
+            Image.CopyText(res);
+          }
         }
     }
 }
